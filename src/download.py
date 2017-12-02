@@ -99,10 +99,10 @@ if __name__ == '__main__':
 
     # 建立人名文件夹，首先对人名去重
     for name in set(person):
-        mkdirs('../data/' + name)
+        mkdirs('data/' + name)
 
     for i in range(0, len(url)):
-        path = '../data/' + person[i] + '/' + imagenumber[i] + '.jpg'
+        path = 'data/' + person[i] + '/' + imagenumber[i] + '.jpg'
 
         # 下载图片
         print(path + ' downloading from ' + url[i])
@@ -126,7 +126,7 @@ if __name__ == '__main__':
             error_image.append(person[i] + ':' + imagenumber[i] + '.jpg:' + url[i])
 
     # 下载失败结果保存进文件中
-    with open('log.txt', 'rt') as log:
+    with open('log.txt', 'wt') as log:
         for line in error_image:
             log.write(line)
 
